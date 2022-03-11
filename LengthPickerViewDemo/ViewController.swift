@@ -8,6 +8,8 @@ class ViewController: UIViewController {
     let metricHeightPickerView = MetricHeightPickerView()
     let imperialHeightPickerView = ImperialHeightPickerView()
     
+    @IBOutlet weak var scUnit: UISegmentedControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        let metricHeightPickerView = MetricHeightPickerView()
@@ -16,8 +18,13 @@ class ViewController: UIViewController {
 //        metricHeightPickerView.integer = 4
         imperialHeightPickerView.decimalDigits = 3
         tfHeight.text = "asdndskvndksk"
-        tfHeight.value = 129.9
-        tfHeight.decimalDigits = 2
+        
+        tfHeight.decimalDigits = 1
+        tfHeight.unitSystem = .Imperial
+        scUnit.selectedSegmentIndex = 1
+        tfHeight.showUnit = true
+        tfHeight.value = 13.1
+        //157.56
 //        tfHeight.unitSystem = .Imperial
 //        tfHeight.inputView = imperialHeightPickerView
         // Do any additional setup after loading the view.

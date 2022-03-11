@@ -4,6 +4,7 @@ import Foundation
 public class HeightPickerTextField : UITextField {
     
     var pickerView : UIPickerView? = MetricHeightPickerView()
+    public var showUnit = false
     public var decimalDigits = 1{
         didSet {
             if let pickerView = pickerView as? MetricHeightPickerView {
@@ -18,19 +19,16 @@ public class HeightPickerTextField : UITextField {
         didSet {
             switch unitSystem {
             case .Metric:
-                print(self.value)
-                if let pickerView = pickerView as? MetricHeightPickerView {
-                    pickerView.value = self.value
-                }
-                self.text = "\(String(format:"%.\(decimalDigits)f", self.value))"
+                
+                let unit = showUnit ? "cm":""
+                self.text = "\(String(format:"%.\(decimalDigits)f", self.value)) \(unit)"
             case .Imperial:
-                print(self.value)
-                if let pickerView = pickerView as? ImperialHeightPickerView {
-                    pickerView.value = self.value
-                }
+                
                 let _ftValue = Int(self.value / 12)
                 let _inchValue = self.value - Double(_ftValue * 12)
-                self.text = "\(_ftValue)'\(String(format:"%.\(decimalDigits)f", _inchValue))\""
+                let ftunit = showUnit ? "ft":"'"
+                let inunit = showUnit ? "in":"\""
+                self.text = "\(_ftValue) \(ftunit) \(String(format:"%.\(decimalDigits)f", _inchValue)) \(inunit)"
                 
             }
         }
@@ -72,7 +70,8 @@ public class HeightPickerTextField : UITextField {
         if let pickerView = pickerView as? MetricHeightPickerView {
             pickerView.metricHeightdelegate = self
             pickerView.decimalDigits = self.decimalDigits
-            pickerView.value = self.value
+            let numberOfDigits = pow(10.0, Double(decimalDigits))
+            pickerView.value = (self.value * numberOfDigits).rounded(.toNearestOrAwayFromZero) / numberOfDigits
         }
         self.inputView = pickerView
     }
@@ -81,7 +80,8 @@ public class HeightPickerTextField : UITextField {
         if let pickerView = pickerView as? ImperialHeightPickerView {
             pickerView.imperialHeightdelegate = self
             pickerView.decimalDigits = self.decimalDigits
-            pickerView.value = self.value
+            let numberOfDigits = pow(10.0, Double(decimalDigits))
+            pickerView.value = (self.value * numberOfDigits).rounded(.toNearestOrAwayFromZero) / numberOfDigits
         }
         self.inputView = pickerView
     }
@@ -111,11 +111,17 @@ extension HeightPickerTextField : UITextFieldDelegate {
     public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool{
         switch unitSystem {
         case .Metric :
-            
+            if let pickerView = pickerView as? MetricHeightPickerView {
+                let numberOfDigits = pow(10.0, Double(decimalDigits))
+                pickerView.value = (self.value * numberOfDigits).rounded(.toNearestOrAwayFromZero) / numberOfDigits
+            }
             break
             
         case .Imperial :
-            
+            if let pickerView = pickerView as? ImperialHeightPickerView {
+                let numberOfDigits = pow(10.0, Double(decimalDigits))
+                pickerView.value = (self.value * numberOfDigits).rounded(.toNearestOrAwayFromZero) / numberOfDigits
+            }
             break
         }
         return true

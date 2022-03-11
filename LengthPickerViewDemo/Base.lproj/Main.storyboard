@@ -46,6 +46,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="scUnit" destination="3Wj-gd-EPj" id="yDK-Ic-rjJ"/>
                         <outlet property="tfHeight" destination="Zpy-DW-r4D" id="4Xd-Qb-HHI"/>
                     </connections>
                 </viewController>
