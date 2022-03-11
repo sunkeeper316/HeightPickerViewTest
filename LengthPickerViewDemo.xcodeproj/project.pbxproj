@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D222C9727D5DF1000D7F5A8 /* MetricHeightPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D222C9627D5DF1000D7F5A8 /* MetricHeightPickerView.swift */; };
+		4D3191AB27D98B45007D399D /* MetricHeightPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3191AA27D98B45007D399D /* MetricHeightPickerViewDelegate.swift */; };
+		4D3191B027D9E9A7007D399D /* ImperialHeightPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3191AF27D9E9A7007D399D /* ImperialHeightPickerView.swift */; };
+		4D3191B227D9F7DE007D399D /* ImperialHeightPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3191B127D9F7DE007D399D /* ImperialHeightPickerViewDelegate.swift */; };
+		4D3191B427DAD704007D399D /* HeightPickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3191B327DAD704007D399D /* HeightPickerTextField.swift */; };
 		4D416F0827CDF79A00205F92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D416F0727CDF79A00205F92 /* AppDelegate.swift */; };
 		4D416F0A27CDF79A00205F92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D416F0927CDF79A00205F92 /* SceneDelegate.swift */; };
 		4D416F0C27CDF79A00205F92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D416F0B27CDF79A00205F92 /* ViewController.swift */; };
@@ -16,6 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D222C9627D5DF1000D7F5A8 /* MetricHeightPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricHeightPickerView.swift; sourceTree = "<group>"; };
+		4D3191AA27D98B45007D399D /* MetricHeightPickerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricHeightPickerViewDelegate.swift; sourceTree = "<group>"; };
+		4D3191AF27D9E9A7007D399D /* ImperialHeightPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImperialHeightPickerView.swift; sourceTree = "<group>"; };
+		4D3191B127D9F7DE007D399D /* ImperialHeightPickerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImperialHeightPickerViewDelegate.swift; sourceTree = "<group>"; };
+		4D3191B327DAD704007D399D /* HeightPickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightPickerTextField.swift; sourceTree = "<group>"; };
 		4D416F0427CDF79A00205F92 /* LengthPickerViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LengthPickerViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D416F0727CDF79A00205F92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D416F0927CDF79A00205F92 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +66,7 @@
 		4D416F0627CDF79A00205F92 /* LengthPickerViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				4D416F1B27CDF93500205F92 /* Lib */,
 				4D416F0727CDF79A00205F92 /* AppDelegate.swift */,
 				4D416F0927CDF79A00205F92 /* SceneDelegate.swift */,
 				4D416F0B27CDF79A00205F92 /* ViewController.swift */,
@@ -65,6 +76,18 @@
 				4D416F1527CDF79E00205F92 /* Info.plist */,
 			);
 			path = LengthPickerViewDemo;
+			sourceTree = "<group>";
+		};
+		4D416F1B27CDF93500205F92 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				4D3191AF27D9E9A7007D399D /* ImperialHeightPickerView.swift */,
+				4D3191B127D9F7DE007D399D /* ImperialHeightPickerViewDelegate.swift */,
+				4D222C9627D5DF1000D7F5A8 /* MetricHeightPickerView.swift */,
+				4D3191AA27D98B45007D399D /* MetricHeightPickerViewDelegate.swift */,
+				4D3191B327DAD704007D399D /* HeightPickerTextField.swift */,
+			);
+			path = Lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +161,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D3191B227D9F7DE007D399D /* ImperialHeightPickerViewDelegate.swift in Sources */,
 				4D416F0C27CDF79A00205F92 /* ViewController.swift in Sources */,
+				4D3191AB27D98B45007D399D /* MetricHeightPickerViewDelegate.swift in Sources */,
+				4D222C9727D5DF1000D7F5A8 /* MetricHeightPickerView.swift in Sources */,
 				4D416F0827CDF79A00205F92 /* AppDelegate.swift in Sources */,
+				4D3191B027D9E9A7007D399D /* ImperialHeightPickerView.swift in Sources */,
+				4D3191B427DAD704007D399D /* HeightPickerTextField.swift in Sources */,
 				4D416F0A27CDF79A00205F92 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
